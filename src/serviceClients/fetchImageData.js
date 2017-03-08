@@ -11,10 +11,23 @@ export default {
 
         request(GET, callback);
     },
-    fecthBatchImages(offset, limit, callback){
+    fetchBatchImages(offset, limit, selectedTags, callback){
+        let host = process.env.REACT_APP_SERVICE_HOST;
+        let requestBody = {offset, limit, selectedTags};
+        let POST = {
+            url: `${host}/api/fetchRecentImages`,
+            json: true,
+            method: "POST",
+            withCredentials: false,
+            body: { requestBody }
+        };
+
+        request(POST, callback);
+    },
+    fetchFilterList(callback){
         let host = process.env.REACT_APP_SERVICE_HOST;
         let GET = {
-            url: `${host}/api/fetchRecentImages?offset=${offset}&limit=${limit}`,
+            url: `${host}/api/fetchTagList`,
             json: true,
             withCredentials: false
         };

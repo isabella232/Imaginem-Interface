@@ -91,7 +91,10 @@ li b {
 .article-header {
     margin-top: 5px;
     margin-bottom: 0;
-    font-weight: 400;
+    color: #000!important;
+    text-transform: uppercase;
+    font-size: 14px!important;
+    font-weight: 800;
 }
 
 p.source {
@@ -100,7 +103,7 @@ p.source {
 }
 
 .slick-slide{
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
 .detected-face-title{
@@ -118,4 +121,15 @@ p.source {
 
 .facial-label-text{
     color: #3f3f4f!important;
+    padding-top: 5px!important;
+    padding-bottom: 5px!important;
+    border-radius: 1.25em!important;
+}
+
+.source div{
+  text-align: left;
+  display: inline-table;
+}
+.well{
+  margin-bottom: 0px!important;
 }

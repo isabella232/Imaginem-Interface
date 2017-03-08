@@ -3,11 +3,6 @@ import { Link, IndexLink  } from 'react-router';
 import '../styles/Header.css';
 import logo from '../images/logo.png';
 
-const styles = {
-    icon: {
-        marginLeft: 20
-    }
-}
 const DEFAULT_TITLE = "IMAGINEM";
 
 export default class Header extends Component {
@@ -16,27 +11,29 @@ export default class Header extends Component {
         
         return (
         <nav className="navbar navbar-trans" role="navigation">
-            <div>
+            <div className="container-fluid">
                 <div className="navbar-header">
-                    <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapsible">
+                    <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                         <span className="sr-only">Toggle navigation</span>
                         <span className="icon-bar"></span>
                         <span className="icon-bar"></span>
                         <span className="icon-bar"></span>
                     </button>
                     <a className="navbar-brand text-danger" href="#">
-                            <img role="presentation" src={logo} style={{display: 'inline'}} height="52" />
-                            <span style={styles.icon} className="brandLabel">{title}</span>
+                                <span className="brandLabel">{title}</span>
                     </a>
                 </div>
-                <div className="navbar-collapse collapse" id="navbar-collapsible">
-                    <ul className="nav navbar-nav navbar-left">
-                        <li><IndexLink to={`/`} activeClassName="current">UPLOAD</IndexLink></li>
-                        <li><Link to={`results`} activeClassName="current">RESULTS</Link></li>
-                    </ul>
+                <div id="navbar" className="navbar-collapse collapse">
+                        <ul className="nav navbar-nav navbar-left">
+                            <li><IndexLink to={`/`} activeClassName="current">UPLOAD</IndexLink></li>
+                            <li><Link to={`results`} activeClassName="current">RESULTS</Link></li>
+                        </ul>
+                        <div className="nav navbar-nav navbar-right">
+                            <img role="presentation" src={logo} style={{display: 'inline', marginBottom: '12px'}} height="52" />
+                        </div>
                 </div>
             </div>
         </nav>
-        );
+      );
   }
 }
