@@ -25,7 +25,8 @@ export default class Header extends Component {
                 </div>
                 <div id="navbar" className="navbar-collapse collapse">
                         <ul className="nav navbar-nav navbar-left">
-                            <li><IndexLink to={`/`} activeClassName="current">UPLOAD</IndexLink></li>
+                            <li><IndexLink to={`/`} activeClassName="current">HOME</IndexLink></li>
+                            <li><Link to={`upload`} activeClassName="current">UPLOAD</Link></li>
                             <li><Link to={`results`} activeClassName="current">RESULTS</Link></li>
                         </ul>
                         <div className="nav navbar-nav navbar-right">
